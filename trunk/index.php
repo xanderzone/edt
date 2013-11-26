@@ -5,7 +5,7 @@
 // et Romain Bourdon <rromain@romainbourdon.com>
 // et Hervé Leclerc <herve.leclerc@alterway.fr>
 //  
-// Mise  �our par Herve Leclerc herve.leclerc@alterway.fr
+// Mise  �our par Herve Leclerc herve.leclerc@alterway.frddff
 // Ic󭤳 par Mark James <http://www.famfamfam.com/lab/icons/silk/>
 
 
