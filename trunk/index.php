@@ -7,7 +7,6 @@
   </head>
   <body>
     <?php
-      session_start();
       include("./control/header.php");
     ?>
   </body>
