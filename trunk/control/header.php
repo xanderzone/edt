@@ -9,7 +9,7 @@
         <a href="index.php"> Accueil </a>
       </li>
       <li>
-        <a href="./control/connexion.php"> Connexion </a>
+        <a href="connexion.php"> Connexion </a>
       </li>
     </ul>
   </body>
