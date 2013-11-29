@@ -6,7 +6,7 @@
     <title>Connexion</title>
   </head>
   <body>
-    <form id="form" method="post" action="./control/checkconnect.php" > 
+    <form id="form" method="post" action="./control/connexion.php" > 
     <fieldset>
       <legend>Connexion</legend>
       <p>
