@@ -38,14 +38,10 @@
 		}
 		
 		//setter salle
-		public setSalle($s){
+		public function setSalle($s){
 			if(is_int($s)){ $this->salle = $s;}
 			else{ $this->salle = 0;}
 		}
 		
 		public function is_cours($c2){
-			return ( $c2->horaireDebut->is_horaire() &&
-						$c2->horaireFin->is_horaire() &&
-						is_string($c2->matiere->is_g &&
-						is_string($c2->groupe) &&
-						is_int($c2->salle));
+			return ( $this->horaireDebut->equals($c2->horaireDebut)
