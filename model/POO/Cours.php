@@ -1,5 +1,5 @@
 <?php
-	public class Cours{
+	class Cours{
 		//private $RefCours;
 		private $horaireDebut;
 		private $horaireFin;
@@ -44,4 +44,14 @@
 		}
 		
 		public function is_cours($c2){
-			return ( $this->horaireDebut->equals($c2->horaireDebut)
+			return ( $this->horaireDebut->equals($c2->horaireDebut) &&
+                        $this->groupe->equals($c2->groupe) &&
+                        $this->horaireFin->equals($c2->horaireFin) &&
+                        $this->matiere->equals($c2->matiere) &&
+                        $this->salle->equals($c2->salle));
+                }
+        }
+        
+                
+?>                        
+                                
