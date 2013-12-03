@@ -21,5 +21,16 @@
             return;
         }
         
-        public function getGroupe
+        //accesseurs
+        public function getNom(){
+            return $this->nom;
+        }
+        
+        public function getINE(){
+            return $this->INE;
+        }
+        
+        public function getPrenom(){
+            return $this->prenom;
+        }
     }
