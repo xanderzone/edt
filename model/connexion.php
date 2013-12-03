@@ -1,39 +1,15 @@
 
-<?php 
-//modèle connexion
-	include(dirname(__FILE__).'/../model/connexion.php');
-	
-	//récupération des id
-	$email = $_POST["email"];
-	$mdp = md5($_POST["password"]);
-	
-		// connexion BD
-	connectionBD();
-	//appel fonction BD
-	//include("../control/verifUserBD.php");
-	
-	
-	if(UserExistBD($email, $mdp)==true){
-		$typeUser=TypeUser($email, $mdp);
-		$_SESSION['login']=$email;
-		header ('Location: ../index.php');
-	}
-	else{
-		include('../index.php');
-	}
-	
-	
-?>
-		
-		
-		
-		
-	
-	
-	
-	
-	
 
+
+<?php
 	
-	
-	
+	function connexion(){
+
+
+		$ok=false;
+		if(!empty($identifiant) and !empty($mdp) ):
+			$req = "Select * FROM Users WHERE identifiant='$identifiant' and mdp='$mdp'";
+			$ok =mysql_query($req) or die(mysql_error());
+		endif;
+	}
+?>
