@@ -7,7 +7,7 @@
   </head>
   <body>
     <?php
-      include("header.php");
+      include("./view/header.php");
     ?>
   </body>
 </html>
