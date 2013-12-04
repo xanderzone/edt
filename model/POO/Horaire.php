@@ -1,10 +1,11 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Document sans nom</title>
-</head>
-
-<body>
-</body>
-</html>
+<?php
+    class Horaire{
+        private $heure;
+        private $min;
+        private $date;
+    }
+    public function __construct($h,$min,$d){
+        
+        $this->heure = $h;
+        $this->mi
+    }

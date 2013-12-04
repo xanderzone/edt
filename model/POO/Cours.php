@@ -29,6 +29,9 @@
 		public function setMatiere($m){
 			if(is_string($m)){ $this->matiere = $m;}
 			else{ $this->matiere ='matiere non valide: no string';}
+$req = 
+                        $this->matiere = $req;
+
 		}
 		
 		//setter groupe
@@ -50,8 +53,48 @@
                         $this->matiere->equals($c2->matiere) &&
                         $this->salle->equals($c2->salle));
                 }
+                
+                //accesseurs
+                public function getMatiere(){
+                    return $this->matiere;
+                }
+                public function getSalle(){
+                    return $this->salle;
+                }
+                public function getHoraireDebut(){
+                    return $this->horaireDebut;
+                }
+                public function getHoraireFin(){
+                    return $this->horaireFin;
+                }
+                public function getGroupe(){
+                    return $this->groupe;
+                }
+                
+                //afficheurs
+                
+                public function afficheMatiere(){
+                    echo $this->getMatiere();
+                }
+                public function afficheSalle(){
+                    echo $this->getSalle();
+                }
+                public function afficheHoraireDebut(){
+                    echo $this->getHoraireDebut();
+                }
+                public function afficheHoraireFin(){
+                    echo $this->horaireFin();
+                }
+                public function afficheGroupe(){
+                    echo $this->getGroupe();
+                }
+                
+                
         }
         
+        $cours = new Cours("12h45","12h56","")
                 
-?>                        
+?>     
+
+
                                 
