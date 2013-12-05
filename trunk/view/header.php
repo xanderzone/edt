@@ -10,7 +10,7 @@
       </li>
       <li>
         <?php
-            if(!empty($_SESSION['login']))
+            if(!empty($_SESSION['email']))
             {
                 include("connected.php");
             }

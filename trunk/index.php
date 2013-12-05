@@ -7,6 +7,8 @@
   </head>
   <body>
     <?php
+      session_start();
+      session_status();
       include("./view/header.php");
     ?>
   </body>
