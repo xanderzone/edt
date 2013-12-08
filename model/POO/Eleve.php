@@ -7,7 +7,7 @@
             parent::__construct($num, $n, $pre, $mdp) ;
             $this->groupe = $gpe;
         }
-        public
+       
         public function getGroupe(){
             return $this->groupe;
         }
