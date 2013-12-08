@@ -10,6 +10,7 @@
         
         //constructeur
         public function __construct($num, $n, $pre,$m, $mdp) {
+            $req = 
             $this->INE = $num;
             $this->nom = $n;
             $this->prenom = $pre;
