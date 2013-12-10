@@ -1,4 +1,15 @@
 <?php
+/**
+ * methode retournant le nb de cours présent dans la BD
+ */
+function nbCoursBD(){
+                    include("./model/connexionBD");
+                    $req = "SELECT COUNT NumCours FROM Cours";
+                    $sendreq = mysql_query($req);
+                    $result = mysql_fetch_array($sendreq);
+                    return $result['NumCours'];
+                }
+                
 	class Cours{
 		//private $RefCours;
 		private $horaireDebut;
@@ -11,14 +22,17 @@
 		//constructeur
 		
 		public function __construct($heureD, $heureF, $mat, $gpe, $sa){
-			$this->setCrenaux($heureD,$heureF);
-			$this->setMatiere($mat);
-			$this->setGroupe($gpe);
-			$this->setSalle($sa);
-                        
-		}
+                    $place = nbCoursBD();
+                    $place = $place + 1;
+                    $req = "INSERT INTO Cours(NumCours,NomMatiere,NumSalle,	
+                        NumGroupe,HeureDebut,HeureFin)
+                        VALUES ($place,$mat,$sa,$gpe,$heureD,$heureF)";
+                    $sendreq = mysql_query($req);
+                }
+			
+                       
 		
-		//setter creanaux horaire
+		//updateter creanaux horaire
 		public function setCrenaux($d, $f){
                     //heure conn
                     include("./model/connexionBD.php");
@@ -97,37 +111,31 @@
                         }
 			
 		}
-		/*
-		public function is_cours($c2){
-			return ( $this->horaireDebut->equals($c2->horaireDebut) &&
-                        $this->groupe->equals($c2->groupe) &&
-                        $this->horaireFin->equals($c2->horaireFin) &&
-                        $this->matiere->equals($c2->matiere) &&
-                        $this->salle->equals($c2->salle));
-                }*/
+		
+              
                 
                 //accesseurs
-                public function getMatiere($m){
+                public function commitMatiere($m){
                     /* 1.verifie si m est une matiere dans la table matiere
                      * 2.si oui, update matiere;
                      */
                     include("./model/connexionBD.php");
-                    $req = "INSERT INTO Cours
+                    $req = "INSERT INTO Cours ()";
                     return $this->matiere;
                 }
-                public function getSalle(){
+                public function commitSalle(){
                     include("./model/connexionBD.php");
                     return $this->salle;
                 }
-                public function getHoraireDebut(){
+                public function commitHoraireDebut(){
                     include("./model/connexionBD.php");
                     return $this->horaireDebut;
                 }
-                public function getHoraireFin(){
+                public function commitHoraireFin(){
                     include("./model/connexionBD.php");
                     return $this->horaireFin;
                 }
-                public function getGroupe(){
+                public function commitGroupe(){
                     include("./model/connexionBD.php");
                     return $this->groupe;
                 }
@@ -135,26 +143,28 @@
                 //afficheurs
                 
                 public function afficheMatiere(){
-                    echo $this->getMatiere();
+                    echo $this->Matiere();
                 }
                 public function afficheSalle(){
-                    echo $this->getSalle();
+                    echo $this->Salle();
                 }
                 public function afficheHoraireDebut(){
-                    echo $this->getHoraireDebut();
+                    echo $this->HoraireDebut();
                 }
                 public function afficheHoraireFin(){
                     echo $this->horaireFin();
                 }
                 public function afficheGroupe(){
-                    echo $this->getGroupe();
+                    echo $this->Groupe();
                 }
                 public function afficheCours(){
-                    getMatiere($m);
-                    $cours = new Cours(sdgrg);
+                    $this->afficheMatiere();
+                    $this->afficheSalle();
+                    return;
                 }
                 
         }
+        
         
         
                 
