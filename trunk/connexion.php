@@ -10,8 +10,8 @@
     <fieldset>
       <legend>Connexion</legend>
       <p>
-        <label for="email"> Email </label> :
-        <input type="email" placeholder="Ex : example@gmail.com" name="email" id="email"/>
+        <label for="ine">INE</label> :
+        <input type="text" placeholder="Ex : 110493465C" name="ine" id="ine"/>
       </p>
       <p>
         <label for="password"> Mot de passe </label> :
