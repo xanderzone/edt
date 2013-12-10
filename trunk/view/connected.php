@@ -3,5 +3,5 @@
     <?php
         echo($_SESSION['email']);
     ?>
-    <a href="./deconnexion.php"> Deconnexion </a>
+    <a href="./control/deconnexion.php"> Deconnexion </a>
 </p>
