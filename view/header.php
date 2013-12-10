@@ -15,10 +15,4 @@
             }
          ?>
       </li>
-         <?php 
-            if(!empty($_SESSION['email']))
-            {
-                include("access.php");
-            }
-         ?>
     </ul>
