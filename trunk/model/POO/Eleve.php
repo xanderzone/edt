@@ -6,6 +6,7 @@
         public function __construct($num, $n, $pre, $mdp, $gpe) {
             parent::__construct($num, $n, $pre, $mdp) ;
             $this->groupe = $gpe;
+            $this->droit=2;
         }
        
         public function getGroupe(){
