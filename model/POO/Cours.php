@@ -112,7 +112,7 @@
                      * 2.si oui, update matiere;
                      */
                     include("./model/connexionBD.php");
-                    $req = "INSERT INTO Cours";
+                    $req = "INSERT INTO Cours
                     return $this->matiere;
                 }
                 public function getSalle(){

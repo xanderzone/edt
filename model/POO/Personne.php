@@ -1,21 +1,23 @@
 <?php
     abstract class Personne {
         //attribut
-        private $INE;
-        private $nom;
-        private $prenom;
-        private $mail;
-        private $password;
+        protected $INE;
+        protected $nom;
+        protected $prenom;
+        protected $mail;
+        protected $password;
+        protected $droit; // Droit : 0=Admin; 1=Prof; 2=Eleve; 
         
         
         //constructeur
-        public function __construct($num, $n, $pre,$m, $mdp) {
+        public function __construct($num, $n, $pre,$m, $mdp, $droit) {
             $req = 
             $this->INE = $num;
             $this->nom = $n;
             $this->prenom = $pre;
             $this->password = $mdp;
             $this->mail = $m;
+            $this->droit=$droit;
             ;
         }
         
