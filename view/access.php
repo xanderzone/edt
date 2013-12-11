@@ -1,15 +1,15 @@
-<form id="form" method="post" action="visual.php" > 
+<form id="form" method="post" action="control/access.php" > 
     <fieldset>
       <legend>Choix emploi du temps</legend>
       <p>
         Jour :
         <select name="jour">
             <option value="semaine" selected="selected">Semaine entière</option>
-            <option value="lundi">Lundi</option>
-            <option value="mardi">Mardi</option>
-            <option value="mercredi">Mercredi</option>
-            <option value="jeudi">Jeudi</option>
-            <option value="lundi">Vendredi</option>
+            <option value="Lundi">Lundi</option>
+            <option value="Mardi">Mardi</option>
+            <option value="Mercredi">Mercredi</option>
+            <option value="Jeudi">Jeudi</option>
+            <option value="Vendredi">Vendredi</option>
         </select>
       </p>
       <p>

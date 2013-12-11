@@ -1,8 +1,16 @@
 <p>
-    Bonjour
+    Bonjour 
     <?php
-        echo($_SESSION['email']);
-    ?>
+        switch($_SESSION['droit'])
+        { 
+        case 0:echo("Administrateur");
+            break;
+        case 1:echo("Professeur");
+            break;
+        case 2:echo("Administrateur");
+            break;
+        }
+     ?>
     <a href="./control/deconnexion.php"> Deconnexion </a>
 </p>
 <p>
