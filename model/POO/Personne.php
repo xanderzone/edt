@@ -1,4 +1,11 @@
 <?php
+/*
+ * Classe Personne 
+ * Important ; attribut droit : 
+ * droit =0 => Administrateur , création modification consultation
+ * droit =1 => Professeur  modification consultation
+ * droit =2 => Eleves  consultation
+ */
     abstract class Personne {
         //attribut
         protected $INE;
@@ -10,39 +17,62 @@
         
         
         //constructeur
-        public function __construct($num, $n, $pre,$m, $mdp, $droit) {
+        public function __construct($num, $n, $pre,$m, $mdp) {
             $req = 
             $this->INE = $num;
             $this->nom = $n;
             $this->prenom = $pre;
             $this->password = $mdp;
             $this->mail = $m;
-            $this->droit=$droit;
-            ;
+            // droit défini dans les classes héritantes
         }
         
-        public function editMail($newMail){
-            $this->mail = $newMail;
-        }
-        public function editPassword($newPass){
-            $this->password = $newPass;
-            return;
-        }
         
+       
+        
+          //setNum, vérifie le Numéro IDE sur la BD, et affecte l'attribut
+    public function setNum($num){
+        include("./model/connexionBD.php");
+        $req = "SELECT NumIne FROM Personne
+                WHERE NumIne=$num";
+        $sendreq = mysql_query($req);
+        $ligne = mysql_fetch_array($sendreq);
+        if($m==$ligne["NumIne"]){
+            $this->INE = $num;
+            }
+            else {
+                echo "Numéro INE non dispo";
+            }
+    }
+    
+    //setNom, vérifie le nom de la personne, affecte l'attribut
+    public function setNom($n){
+        include("./model/connexionBD.php");
+        $req = "SELECT NomPersonne FROM Personne
+                WHERE NomPersonne=$n";
+        $sendreq = mysql_query($req);
+        $ligne = mysql_fetch_array($sendreq);
+        if($m==$ligne["NomPersonne"]){
+            $this->nom = $n;
+            }
+            else {
+                echo "Nom non dispo";
+            }
+    }
         //accesseurs
-        public function getNom(){
-            return $this->nom;
+        public function commitNom(){
+   
         }
         
-        public function getINE(){
-            return $this->INE;
+        public function commitINE(){
+            
         }
         
-        public function getPrenom(){
-            return $this->prenom;
+        public function commitPrenom(){
+           
         }
-        public function getMail(){
-            return $this->mail;
+        public function commitMail(){
+           
         }
         
         public abstract function affichePersonne();

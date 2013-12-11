@@ -10,6 +10,9 @@ function nbCoursBD(){
                     return $result['NumCours'];
                 }
                 
+/* Classe Cours 
+ *
+ */             
 	class Cours{
 		//private $RefCours;
 		private $horaireDebut;
@@ -19,11 +22,14 @@ function nbCoursBD(){
 		private $salle;
 		
 		
-		//constructeur
-		
+		//constructeur, récupération de la BD
 		public function __construct($heureD, $heureF, $mat, $gpe, $sa){
                     $place = nbCoursBD();
+                    /* Futur numéro du Cours, on est sur qu'il n'est pas présent
+                     * dans la BD
+                     */
                     $place = $place + 1;
+                    
                     $req = "INSERT INTO Cours(NumCours,NomMatiere,NumSalle,	
                         NumGroupe,HeureDebut,HeureFin)
                         VALUES ($place,$mat,$sa,$gpe,$heureD,$heureF)";
@@ -32,9 +38,9 @@ function nbCoursBD(){
 			
                        
 		
-		//updateter creanaux horaire
+		//setteur crénaux,  recupèration sur la BD
 		public function setCrenaux($d, $f){
-                    //heure conn
+                    //connexion BD
                     include("./model/connexionBD.php");
                     $reqD = "SELECT HeureDebut,HoraireFin FROM Horaire
                               WHERE HeureDebut = $d AND 
@@ -57,13 +63,12 @@ function nbCoursBD(){
                     else{
                         echo "horaire début non disponible";
                     }
-                    
-			
-			
+             	
 		}
 		
-		//setter matiere
+		//setter matiere,  recupèration sur la BD
 		public function setMatiere($m){
+                    //connexion BD
                         include("./model/connexionBD.php");
 			$req = "SELECT NomMatiere FROM Matiere 
                                 WHERE NomMatiere = $m";
@@ -78,8 +83,9 @@ function nbCoursBD(){
                         
 		}
 		
-		//setter groupe
+		//setter groupe, recupèration sur la BD
 		public function setGroupe($g){
+                      //connexion BD
                         include("./model/connexionBD.php");
 			$req = "SELECT numGroupe FROM Groupe
                             WHERE numGroupe=$g";
@@ -112,33 +118,38 @@ function nbCoursBD(){
 			
 		}
 		
-              
+              /*
+               * Getteurs, sert à changer un attribut de Cours directeur sur la BD
+               */
                 
-                //accesseurs
+                //commitMatière, placement sur la BD
                 public function commitMatiere($m){
                     /* 1.verifie si m est une matiere dans la table matiere
                      * 2.si oui, update matiere;
                      */
                     include("./model/connexionBD.php");
-                    $req = "INSERT INTO Cours ()";
-                    return $this->matiere;
+                    
                 }
+                //commitSalle, , placement sur la BD
                 public function commitSalle(){
                     include("./model/connexionBD.php");
-                    return $this->salle;
                 }
+                //commitHoraireDebut, , placement sur la BD
                 public function commitHoraireDebut(){
                     include("./model/connexionBD.php");
-                    return $this->horaireDebut;
+                    
                 }
+                //commitHoraireFin, , placement sur la BD
                 public function commitHoraireFin(){
                     include("./model/connexionBD.php");
-                    return $this->horaireFin;
+                    
                 }
+                //commitGroupe, , placement sur la BD
                 public function commitGroupe(){
                     include("./model/connexionBD.php");
-                    return $this->groupe;
                 }
+                
+                
                 
                 //afficheurs
                 
