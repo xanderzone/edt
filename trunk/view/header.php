@@ -5,7 +5,7 @@
       </li>
       <li>
         <?php
-            if(!empty($_SESSION['email']))
+            if(!empty($_SESSION['Ine']))
             {
                 include("connected.php");
             }
