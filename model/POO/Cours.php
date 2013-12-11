@@ -22,8 +22,8 @@ function nbCoursBD(){
 		private $salle;
 		
 		
-		//constructeur, récupération de la BD
-		public function __construct($heureD, $heureF, $mat, $gpe, $sa){
+		//constructeur, insertion dans la BD
+		public function BDinsert($heureD, $heureF, $mat, $gpe, $sa){
                     $place = nbCoursBD();
                     /* Futur numéro du Cours, on est sur qu'il n'est pas présent
                      * dans la BD
@@ -34,6 +34,14 @@ function nbCoursBD(){
                         NumGroupe,HeureDebut,HeureFin)
                         VALUES ($place,$mat,$sa,$gpe,$heureD,$heureF)";
                     $sendreq = mysql_query($req);
+                }
+                
+                public function __construct($heureD, $heureF, $mat, $gpe, $sa){
+                    $this->horaireDebut = $heureD;
+                    $this->horaireFin = $heureF;
+                    $this->groupe = $gpe;
+                    $this->salle = $sa;
+                    $this->matiere = $mat;
                 }
 			
                        
@@ -174,7 +182,11 @@ function nbCoursBD(){
                     return;
                 }
                 
+               
+                
         }
+        
+        
         
         
         
