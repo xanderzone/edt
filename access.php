@@ -8,7 +8,7 @@
   <body>
       <?php
         session_start();
-        if(!empty($_SESSION['ine']))
+        if(!empty($_SESSION['Ine']))
         {
             include("view/access.php");
         }

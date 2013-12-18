@@ -1,41 +1,37 @@
 <?php
-include("/POO/Cours.php");
-/*$jour=$_POST['jour'];
-    $horairedebut=$_POST['horairedebut'];
-    $horairefin=$_POST['horairefin'];
-    $groupe=$_POST['groupe'];
-
-*/
 
  function consultation($d, $hd, $hf,$gp){
-        include("./model/connexionBD.php");
-        $req = "SELECT * FROM Cours WHERE 
-                date=$d AND
-                    HeureDebut>=$hd AND
-                        HeureFin<=$hf AND
-                            NumGroupe=$pg";
+        $req = "SELECT NomMatiere FROM Cours WHERE 
+                date='$d' AND
+                    HeureDebut='$hd' AND
+                        HeureFin='$hf'";
         $sendreq = mysql_query($req);
-        $result = mysql_fetch_array($sendreq);
-        
-        $edt = array();
-        
-        foreach ($result as $key=>$value){
-            foreach ($value as $i){
-                
+                if(mysql_num_rows($sendreq)>0)
+            {
+                $result=mysql_result($sendreq, 0);
+                return $result;
             }
-            
-        }
-    }
+            else
+            {
+                return(null);
+            }
 
-
-
-
-
-
-
-
-
-
-
+ }
+ 
+ 
+ function day($day){
+     switch($day)
+                { 
+                    case 0:return("Lundi");
+                        break;
+                    case 1:return("Mardi");
+                        break;
+                    case 2:return("Mercredi");
+                        break;
+                    case 3:return("Jeudi");
+                        break;
+                    case 4:return("Vendredi");
+                }
+ }
 
 ?>
