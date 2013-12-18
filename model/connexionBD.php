@@ -1,5 +1,5 @@
 <?php
-		$hostname='infolimon'; //infolimon
+		$hostname="infolimon"; //infolimon
 		$login='chicautk'; //login iut
 		$passwd='azerty13'; // votre passwd
 		$base='chicautk'; //login iut
