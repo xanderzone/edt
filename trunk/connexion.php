@@ -10,8 +10,8 @@
     <fieldset>
       <legend>Connexion</legend>
       <p>
-        <label for="ine">INE</label> :
-        <input type="text" placeholder="Ex : 110493465C" name="ine" id="ine"/>
+        <label for="Ine">INE</label> :
+        <input type="text" placeholder="Ex : 110493465C" name="Ine" id="Ine"/>
       </p>
       <p>
         <label for="password"> Mot de passe </label> :
